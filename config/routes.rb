@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   # get 'items/destroy'
 
+  get 'items/:id/move_f' => 'items#move_f', as: :move_f
+  get 'items/:id/move_b' => 'items#move_b', as: :move_b
+
   resources :items
 
   # The priority is based upon order of creation: first created -> highest priority.

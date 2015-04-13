@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :move_f, :move_b, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -26,13 +26,25 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def move_f
+    @item.section_id += 1
+    @item.save
+    redirect_to root_path
+  end
+
+  def move_b
+    @item.section_id -= 1
+    @item.save
+    redirect_to root_path
+  end
+
   def edit
   end
 
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -57,6 +69,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :description)
+      params.require(:item).permit(:title, :description, :section_id)
     end
 end

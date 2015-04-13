@@ -1,5 +1,6 @@
 <div class="container cork">
-	<h4 class="btn btn-success"><%= link_to "Add To Do", new_item_path %></h4>
+	<br />
+	<%= link_to "Add To Do", new_item_path, :class => "btn btn-success" %>
 	<div class="row hidden-xs">
 		<% @sections.each do |section| %>
 			<div class="col-sm-4">
@@ -22,6 +23,18 @@
 						<div class="panel-footer">
 							<%= link_to 'Edit', edit_item_path(item) %> |
 							<%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+							<span class="pull-right">
+								<% unless item.section_id == 1 %>
+									<%= link_to move_b_url(id: item.id) do %>
+									    <i class="glyphicon glyphicon-arrow-left"></i>
+									<% end %>
+								<% end %>
+								<% unless item.section_id == 3 %>
+									<%= link_to move_f_url(id: item.id) do %>
+									    <i class="glyphicon glyphicon-arrow-right"></i>
+									<% end %>
+								<% end %>
+							</span>
 						</div>
 					</div>
 				<% end %>
@@ -45,9 +58,32 @@
 						<div class="panel-body">
 							<p><%= item.description %></p>
 						</div>
+						<div class="panel-footer">
+							<%= link_to 'Edit', edit_item_path(item) %> |
+							<%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+							<span class="pull-right">
+								<% unless item.section_id == 1 %>
+									<%= link_to move_b_url(id: item.id) do %>
+									    <i class="glyphicon glyphicon-arrow-up"></i>
+									<% end %>
+								<% end %>
+								<% unless item.section_id == 3 %>
+									<%= link_to move_f_url(id: item.id) do %>
+									    <i class="glyphicon glyphicon-arrow-down"></i>
+									<% end %>
+								<% end %>
+							</span>
+						</div>
 					</div>
 				<% end %>
 			</div>
 		<% end %>
 	</div>
+
+	<% if @items.empty? %>
+		<span class="pull-left">
+			<%= image_tag('arrow.png') %>
+		</span>
+		<h2 class="fancytext"><span>Sorry there are no items yet. Add your first item</span></h2>
+	<% end %>
 </div>
