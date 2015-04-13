@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+	background-image: url(grass_background.jpg);
+	background-repeat: repeat;
+}
+
+.sectionback {
+	background-color: #B88D62;
+	border-radius: 30px;
+	padding: 5px;
+}
+
+.cork {
+	background-image: url(cork_background.png);
+	background-repeat: repeat;
+}

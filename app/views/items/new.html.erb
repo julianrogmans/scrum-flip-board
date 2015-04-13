@@ -1,2 +1,17 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<div class="container cork">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1 class="text-center">New Item</h1>
+			<div class="row">
+				<%= render 'form' %>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<%= link_to 'Cancel', sections_index_path, :class => "btn btn-danger" %>
+		</div>
+	</div>
+	<br />
+</div>

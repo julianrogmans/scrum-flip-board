@@ -1,2 +1,17 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<div class="container cork">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1 class="text-center">Edit Item</h1>
+			<div class="row">
+				<%= render 'form' %>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<%= link_to 'Cancel', sections_index_path, :class => "btn btn-danger" %>
+		</div>
+	</div>
+	<br />
+</div>
