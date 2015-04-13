@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="row">
+		<h1>Welcome the the flip board</h1>
+
+		<% @items.each do |item| %>
+			<div class="col-sm-4">
+				<h2 class="text-center"><%= link_to item.title, item %></h2>
+				<p><%= item.description %></p>
+			</div>
+		<% end %>
+	</div>
+</div>

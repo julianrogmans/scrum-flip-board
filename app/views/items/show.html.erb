@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-1">
+			<h4 class="btn btn-info"><%= link_to "Back", sections_index_path %></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="panel panel-warning">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<%= @item.title %>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p><%= @item.description %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
