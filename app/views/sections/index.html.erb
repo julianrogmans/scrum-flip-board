@@ -4,14 +4,14 @@
 	<div class="row hidden-xs">
 		<% @sections.each do |section| %>
 			<div class="col-sm-4">
-				<h1 class="text-center sectionback"><%= section.name %></h1>
+				<h1 class="text-center fancytext"><%= section.name %></h1>
 				<hr />
 			</div>
 		<% end %>
 		<% @sections.each do |section| %>
 			<div class="col-sm-4">
 				<% @items.where(section_id: section.id).each do |item| %>
-					<div class="panel panel-warning">
+					<div class="panel panel-success">
 						<div class="panel-heading">
 							<h3 class="panel-title">
 							<%= link_to item.title, item %>
@@ -44,12 +44,12 @@
 	<div class="row visible-xs">
 		<% @sections.each do |section| %>
 			<div class="col-xs-12">
-				<h1 class="text-center sectionback"><%= section.name %></h1>
+				<h1 class="text-center fancytext"><%= section.name %></h1>
 				<hr />
 			</div>
 			<div class="col-xs-12">
 				<% @items.where(section_id: section.id).each do |item| %>
-					<div class="panel panel-warning">
+					<div class="panel panel-success">
 						<div class="panel-heading">
 							<h3 class="panel-title">
 							<%= link_to item.title, item %>
