@@ -17,9 +17,11 @@
 							<%= link_to item.title, item %>
 							</h3>
 						</div>
-						<div class="panel-body">
-							<p><%= item.description %></p>
-						</div>
+						<% unless item.description.empty? %>
+							<div class="panel-body">
+								<p><%= item.description %></p>
+							</div>
+						<% end %>
 						<div class="panel-footer">
 							<%= link_to 'Edit', edit_item_path(item) %> |
 							<%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -55,9 +57,11 @@
 							<%= link_to item.title, item %>
 							</h3>
 						</div>
-						<div class="panel-body">
-							<p><%= item.description %></p>
-						</div>
+						<% unless item.description.empty? %>
+							<div class="panel-body">
+								<p><%= item.description %></p>
+							</div>
+						<% end %>
 						<div class="panel-footer">
 							<%= link_to 'Edit', edit_item_path(item) %> |
 							<%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
