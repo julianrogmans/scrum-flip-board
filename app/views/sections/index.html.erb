@@ -1,8 +1,8 @@
-<div class="container cork">
+<div class="container chalkboard-bg">
 	<br />
 	<%= link_to "Add To Do", new_item_path, :class => "btn btn-success" %>
 	<div class="row hidden-xs">
-		<% @sections.each do |section| %>
+		<% (1..3).each do |section| %>
 			<div class="col-sm-4">
 				<h1 class="text-center fancytext"><%= section.name %></h1>
 				<hr />
