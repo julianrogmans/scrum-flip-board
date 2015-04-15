@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
 	validates :title, presence: true
 
-	enum position: ['ToDo', 'Doing', 'Done']
+	enum position: [ :to_do, :busy, :done ]
 end

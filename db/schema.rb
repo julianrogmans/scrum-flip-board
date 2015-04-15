@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150415060804) do
   create_table "items", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.text     "description", limit: 65535
-    t.integer  "position",    limit: 4,     default: 1
+    t.integer  "position",    limit: 4,     default: 0
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
   end

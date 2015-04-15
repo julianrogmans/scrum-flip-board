@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :title
       t.text :description
-      t.integer :position, default: 1
+      t.integer :position, default: 0
 
       t.timestamps null: false
     end
