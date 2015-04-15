@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-	belongs_to :section
-
 	validates :title, presence: true
+
+	enum position: ['ToDo', 'Doing', 'Done']
 end
