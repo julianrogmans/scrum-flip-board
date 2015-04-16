@@ -27,14 +27,20 @@ class ItemsController < ApplicationController
   end
 
   def move_f
-    @item.section_id += 1
-    @item.save
+    if @item.to_do?
+      @item.busy!
+    elsif @item.busy?
+      @item.done! 
+    end
     redirect_to root_path
   end
 
   def move_b
-    @item.section_id -= 1
-    @item.save
+    if @item.done?
+      @item.busy!
+    elsif @item.busy?
+      @item.to_do! 
+    end
     redirect_to root_path
   end
 
