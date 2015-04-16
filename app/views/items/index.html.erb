@@ -1,5 +1,121 @@
-<div class="container">
+<div class="container chalkboard-bg">
 	<div class="row">
-		
+		<div class="col-sm-4">
+			<h1 class="fancytext text-center">
+				To Do
+			</h1>
+		</div>
+		<div class="col-sm-4">
+			<h1 class="fancytext text-center">
+				Busy
+			</h1>
+		</div>
+		<div class="col-sm-4">
+			<h1 class="fancytext text-center">
+				Done
+			</h1>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-sm-4">
+			<% @items.to_do.each do |item| %>
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<%= link_to item.title, item %>
+						</h3>
+					</div>
+					<% unless item.description.empty? %>
+						<div class="panel-body">
+							<p><%= item.description %></p>
+						</div>
+					<% end %>
+
+					<div class="panel-footer">
+						<%= link_to 'Edit', edit_item_path(item) %> |
+						<%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+						<span class="pull-right">
+							<% unless item.position == 'to_do' %>
+								<%= link_to move_b_url(id: item.id) do %>
+								    <i class="glyphicon glyphicon-arrow-left"></i>
+								<% end %>
+							<% end %>
+							<% unless item.position == 'done' %>
+								<%= link_to move_f_url(id: item.id) do %>
+								    <i class="glyphicon glyphicon-arrow-right"></i>
+								<% end %>
+							<% end %>
+						</span>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-sm-4">
+			<% @items.busy.each do |item| %>
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<%= link_to item.title, item %>
+						</h3>
+					</div>
+					<% unless item.description.empty? %>
+						<div class="panel-body">
+							<p><%= item.description %></p>
+						</div>
+					<% end %>
+
+					<div class="panel-footer">
+						<%= link_to 'Edit', edit_item_path(item) %> |
+						<%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+						<span class="pull-right">
+							<% unless item.position == 'to_do' %>
+								<%= link_to move_b_url(id: item.id) do %>
+								    <i class="glyphicon glyphicon-arrow-left"></i>
+								<% end %>
+							<% end %>
+							<% unless item.position == 'done' %>
+								<%= link_to move_f_url(id: item.id) do %>
+								    <i class="glyphicon glyphicon-arrow-right"></i>
+								<% end %>
+							<% end %>
+						</span>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-sm-4">
+			<% @items.done.each do |item| %>
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<%= link_to item.title, item %>
+						</h3>
+					</div>
+					<% unless item.description.empty? %>
+						<div class="panel-body">
+							<p><%= item.description %></p>
+						</div>
+					<% end %>
+
+					<div class="panel-footer">
+						<%= link_to 'Edit', edit_item_path(item) %> |
+						<%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+						<span class="pull-right">
+							<% unless item.position == 'to_do' %>
+								<%= link_to move_b_url(id: item.id) do %>
+								    <i class="glyphicon glyphicon-arrow-left"></i>
+								<% end %>
+							<% end %>
+							<% unless item.position == 'done' %>
+								<%= link_to move_f_url(id: item.id) do %>
+								    <i class="glyphicon glyphicon-arrow-right"></i>
+								<% end %>
+							<% end %>
+						</span>
+					</div>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>
