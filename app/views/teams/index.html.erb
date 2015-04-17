@@ -1,27 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="container chalkboard-bg">
+  <!-- <p id="notice"><%= notice %></p> -->
 
-<h1>Listing Teams</h1>
+  <h1 class="text-center fancytext">Team List</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @teams.each do |team| %>
-      <tr>
-        <td><%= team.name %></td>
-        <td><%= link_to 'Show', team_items_path(team.id) %></td>
-        <td><%= link_to 'Edit', edit_team_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @teams.each do |team| %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h1>
+              <%= link_to team.name, team_items_path(team.id), :class => 'fancytext black' %>
+              <span class="pull-right">
+                <%= link_to 'Destroy', team, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+              </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-<br>
+  <%= link_to 'New Team', new_team_path, :class => 'btn btn-success' %>
 
-<%= link_to 'New Team', new_team_path %>
+</div>

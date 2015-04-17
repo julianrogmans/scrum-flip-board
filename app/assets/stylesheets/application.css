@@ -28,6 +28,10 @@ body {
 	color: white;
 }
 
+a.black-text {
+	color: black;
+}
+
 .chalkboard-bg {
 	background-image: url(chalkboard_background.jpg);
 	background-repeat: repeat;
