@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :teams
   get 'sections/index'
 
   get 'sections/show'
@@ -19,10 +18,12 @@ Rails.application.routes.draw do
 
   # get 'items/destroy'
 
-  get 'items/:id/move_f' => 'items#move_f', as: :move_f
-  get 'items/:id/move_b' => 'items#move_b', as: :move_b
+  get 'teams/:team_id/items/:id/move_f' => 'items#move_f', as: :move_f
+  get 'teams/:team_id/items/:id/move_b' => 'items#move_b', as: :move_b
 
-  resources :items
+  resources :teams do
+    resources :items
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
