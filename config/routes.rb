@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :teams
   get 'sections/index'
 
   get 'sections/show'
