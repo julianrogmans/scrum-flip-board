@@ -4,21 +4,7 @@
 			<h1 class="fancytext text-center">
 				To Do
 			</h1>
-		</div>
-		<div class="col-sm-4">
-			<h1 class="fancytext text-center">
-				Busy
-			</h1>
-		</div>
-		<div class="col-sm-4">
-			<h1 class="fancytext text-center">
-				Done
-			</h1>
-		</div>
-	</div>
-	<hr />
-	<div class="row">
-		<div class="col-sm-4">
+			<hr />
 			<% @items.to_do.each do |item| %>
 				<div class="panel panel-success">
 					<div class="panel-heading">
@@ -52,6 +38,10 @@
 			<% end %>
 		</div>
 		<div class="col-sm-4">
+			<h1 class="fancytext text-center">
+				Busy
+			</h1>
+			<hr />
 			<% @items.busy.each do |item| %>
 				<div class="panel panel-success">
 					<div class="panel-heading">
@@ -85,6 +75,10 @@
 			<% end %>
 		</div>
 		<div class="col-sm-4">
+			<h1 class="fancytext text-center">
+				Done
+			</h1>
+			<hr />
 			<% @items.done.each do |item| %>
 				<div class="panel panel-success">
 					<div class="panel-heading">
