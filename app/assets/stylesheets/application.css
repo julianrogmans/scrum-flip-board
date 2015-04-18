@@ -22,40 +22,11 @@ body {
 	background-repeat: repeat;
 }
 
-.fancytext {
-	font-family: 'Indie Flower', cursive;
-	font-weight: bold;
-	color: white;
-}
-
-a.black-text {
-	color: black;
-}
-
 .chalkboard-bg {
 	background-image: url(chalkboard_background.jpg);
 	background-repeat: repeat;
 }
 
-.panel-title {
-	color: #1a3d0a !important;
-	font-size: 24px !important;
-}
-
-.panel-body {
-	font-size: 17px !important;
-}
-
-.panel-footer {
-	background-color: #DFF0D8 !important;
-}
-.panel-footer a {
-	color: #1a3d0a !important;
-}
-
-
-.glyphicon-arrow-up, .glyphicon-arrow-down,
-.glyphicon-arrow-right, .glyphicon-arrow-left
-{
-	font-size: 1.8em;
+a:hover {
+	background-color: transparent;
 }

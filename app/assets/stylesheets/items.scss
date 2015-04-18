@@ -2,8 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.fancytext {
+	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
+	color: white;
+}
+
+.panel-title {
+	color: #1a3d0a !important;
+	font-size: 24px !important;
+}
+
+.panel-body {
+	font-size: 17px !important;
+}
+
+.panel-footer {
+	background-color: #DFF0D8 !important;
+
+	a {
+		color: #1a3d0a !important;
+	}
+}
 
 .form-label {
 	font-size: 24px;
 	letter-spacing: 7px;
+}
+
+.glyphicon-arrow-up, .glyphicon-arrow-down,
+.glyphicon-arrow-right, .glyphicon-arrow-left
+{
+	font-size: 1.8em;
 }
