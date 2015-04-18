@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'sections/index'
-
-  get 'sections/show'
-
   # get 'items/index'
 
   # get 'items/new'
@@ -21,8 +17,8 @@ Rails.application.routes.draw do
   get 'teams/:team_id/items/:id/move_f' => 'items#move_f', as: :move_f
   get 'teams/:team_id/items/:id/move_b' => 'items#move_b', as: :move_b
 
-  resources :teams do
-    resources :items
+  resources :teams, except: [:edit, :update] do
+    resources :items, except: :index
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
