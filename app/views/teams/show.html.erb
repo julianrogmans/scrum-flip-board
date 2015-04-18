@@ -1,5 +1,6 @@
 <div class="container chalkboard-bg">
 	<br />
+	<%= link_to "Back to Teams", teams_path, :class => 'btn btn-default' %>
 	<%= link_to "New Item", new_team_item_path(@team), :class => 'btn btn-success' %>
 	<div class="row">
 		<div class="col-sm-4">
@@ -11,7 +12,7 @@
 				<div class="panel panel-success">
 					<div class="panel-heading">
 						<h3 class="panel-title">
-							<%= link_to item.title, team_item_path(1, item) %>
+							<%= link_to item.title, team_item_path(@team.id, item) %>
 						</h3>
 					</div>
 					<% unless item.description.empty? %>
@@ -21,16 +22,16 @@
 					<% end %>
 
 					<div class="panel-footer">
-						<%= link_to 'Edit', edit_team_item_path(1, item) %> |
-						<%= link_to 'Delete', team_item_path(1, item), method: :delete, data: { confirm: 'Are you sure?' } %>
+						<%= link_to 'Edit', edit_team_item_path(@team.id, item) %> |
+						<%= link_to 'Delete', team_item_path(@team.id, item), method: :delete, data: { confirm: 'Are you sure?' } %>
 						<span class="pull-right">
 							<% unless item.position == 'to_do' %>
-								<%= link_to move_b_url(team_id: 1, id: item.id) do %>
+								<%= link_to move_b_url(team_id: @team.id, id: item.id) do %>
 								    <i class="glyphicon glyphicon-arrow-left"></i>
 								<% end %>
 							<% end %>
 							<% unless item.position == 'done' %>
-								<%= link_to move_f_url(team_id: 1, id: item.id) do %>
+								<%= link_to move_f_url(team_id: @team.id, id: item.id) do %>
 								    <i class="glyphicon glyphicon-arrow-right"></i>
 								<% end %>
 							<% end %>
@@ -48,7 +49,7 @@
 				<div class="panel panel-success">
 					<div class="panel-heading">
 						<h3 class="panel-title">
-							<%= link_to item.title, team_item_path(1, item) %>
+							<%= link_to item.title, team_item_path(@team.id, item) %>
 						</h3>
 					</div>
 					<% unless item.description.empty? %>
@@ -58,16 +59,16 @@
 					<% end %>
 
 					<div class="panel-footer">
-						<%= link_to 'Edit', edit_team_item_path(1, item) %> |
-						<%= link_to 'Delete', team_item_path(1, item), method: :delete, data: { confirm: 'Are you sure?' } %>
+						<%= link_to 'Edit', edit_team_item_path(@team.id, item) %> |
+						<%= link_to 'Delete', team_item_path(@team.id, item), method: :delete, data: { confirm: 'Are you sure?' } %>
 						<span class="pull-right">
 							<% unless item.position == 'to_do' %>
-								<%= link_to move_b_url(team_id: 1, id: item.id) do %>
+								<%= link_to move_b_url(team_id: @team.id, id: item.id) do %>
 								    <i class="glyphicon glyphicon-arrow-left"></i>
 								<% end %>
 							<% end %>
 							<% unless item.position == 'done' %>
-								<%= link_to move_f_url(team_id: 1, id: item.id) do %>
+								<%= link_to move_f_url(team_id: @team.id, id: item.id) do %>
 								    <i class="glyphicon glyphicon-arrow-right"></i>
 								<% end %>
 							<% end %>
@@ -85,7 +86,7 @@
 				<div class="panel panel-success">
 					<div class="panel-heading">
 						<h3 class="panel-title">
-							<%= link_to item.title, team_item_path(1, item) %>
+							<%= link_to item.title, team_item_path(@team.id, item) %>
 						</h3>
 					</div>
 					<% unless item.description.empty? %>
@@ -95,16 +96,16 @@
 					<% end %>
 
 					<div class="panel-footer">
-						<%= link_to 'Edit', edit_team_item_path(1, item) %> |
-						<%= link_to 'Delete', team_item_path(1, item), method: :delete, data: { confirm: 'Are you sure?' } %>
+						<%= link_to 'Edit', edit_team_item_path(@team.id, item) %> |
+						<%= link_to 'Delete', team_item_path(@team.id, item), method: :delete, data: { confirm: 'Are you sure?' } %>
 						<span class="pull-right">
 							<% unless item.position == 'to_do' %>
-								<%= link_to move_b_url(team_id: 1, id: item.id) do %>
+								<%= link_to move_b_url(team_id: @team.id, id: item.id) do %>
 								    <i class="glyphicon glyphicon-arrow-left"></i>
 								<% end %>
 							<% end %>
 							<% unless item.position == 'done' %>
-								<%= link_to move_f_url(team_id: 1, id: item.id) do %>
+								<%= link_to move_f_url(team_id: @team.id, id: item.id) do %>
 								    <i class="glyphicon glyphicon-arrow-right"></i>
 								<% end %>
 							<% end %>
