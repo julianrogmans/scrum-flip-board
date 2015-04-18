@@ -23,7 +23,7 @@ body {
 }
 
 .chalkboard-bg {
-	background-image: url(chalkboard_background.jpg);
+	background: url(chalkboard_background.jpg) #62605E;
 	background-repeat: repeat;
 }
 
