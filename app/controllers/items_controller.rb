@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :move_f, :move_b, :edit, :update, :destroy]
+  before_action :set_team, only: [:new, :edit, :create, :update, :move_f, :move_b]
 
   def index
     @items = Item.all
@@ -14,7 +15,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to root_path, notice: 'Item was successfully created.' }
+        format.html { redirect_to team_item_path(@team, @item), notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -32,7 +33,7 @@ class ItemsController < ApplicationController
     elsif @item.busy?
       @item.done! 
     end
-    redirect_to root_path
+    redirect_to team_path(@team)
   end
 
   def move_b
@@ -41,7 +42,7 @@ class ItemsController < ApplicationController
     elsif @item.busy?
       @item.to_do! 
     end
-    redirect_to root_path
+    redirect_to team_path(@team)
   end
 
   def edit
@@ -50,7 +51,7 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to root_path, notice: 'Item was successfully updated.' }
+        format.html { redirect_to team_path(@team), notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -71,6 +72,10 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def set_team
+      @team = Team.find(params[:team_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

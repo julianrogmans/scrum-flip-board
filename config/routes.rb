@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'teams/:team_id/items/:id/move_b' => 'items#move_b', as: :move_b
 
   resources :teams, except: [:edit, :update] do
-    resources :items, except: :index
+    resources :items, except: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

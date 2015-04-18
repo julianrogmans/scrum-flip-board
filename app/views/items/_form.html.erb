@@ -1,4 +1,4 @@
-<%= form_for(@item) do |f| %>
+<%= form_for([@item.team, @item]) do |f| %>
 	<% if @item.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -21,8 +21,7 @@
 		<div class="col-sm-6 col-sm-offset-3">
 			<%= f.label :description, :class => "form-label fancytext" %>
 			<%= f.text_area :description, :class => "form-control" %>
-
-			<%= f.hidden_field :section_id %>
+			<%= f.hidden_field :team_id, :value => @item.team %>
 		</div>
 	</div>
 	<br />
