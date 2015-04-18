@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :move_f, :move_b, :edit, :update, :destroy]
-  before_action :set_team, only: [:new, :edit, :create, :update, :move_f, :move_b]
+  before_action :set_team, only: [:new, :edit, :create, :update, :move_f, :move_b, :destroy]
 
   def index
     @items = Item.all
@@ -63,7 +63,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to team_path(@team), notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
