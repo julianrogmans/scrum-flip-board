@@ -13,7 +13,7 @@
               <h1>
               <%= link_to team.name, team_path(team.id), :class => 'fancytext black-text' %>
               <span class="pull-right">
-                <%= link_to 'Destroy', team, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Destroy', team, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure? DELETING THIS WILL ALL THE ITEMS THAT BELONG TO THE TEAM' } %>
               </span>
               </h1>
             </div>
