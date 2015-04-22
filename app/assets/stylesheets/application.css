@@ -18,12 +18,12 @@
 
 
 body {
-	background-image: url(grass_background_opensource.jpg);
+	background-image: image-url(grass_background_opensource.jpg);
 	background-repeat: repeat;
 }
 
 .chalkboard-bg {
-	background: url(chalkboard_background.jpg) #62605E;
+	background: image-url(chalkboard_background.jpg) #62605E;
 	background-repeat: repeat;
 }
 
