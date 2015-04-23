@@ -114,5 +114,11 @@
 				</div>
 			<% end %>
 		</div>
+		<% if @team.items.empty? %>
+			<span class="pull-left">
+				<%= image_tag('arrow.png') %>
+			</span>
+			<h2 class="fancytext"><span>Add your first item</span></h2>
+		<% end %>
 	</div>
 </div>
