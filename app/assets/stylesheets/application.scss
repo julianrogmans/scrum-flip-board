@@ -14,12 +14,16 @@
  *= require_self
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootsy";
+
 @import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 
 
 body {
-	background-image: url(image-path("grass_background_opensource.jpg"));
-	background-repeat: repeat;
+	// background-image: url(image-path("grass_background_opensource.jpg"));
+	// background-repeat: repeat;
 }
 
 .chalkboard-bg {
