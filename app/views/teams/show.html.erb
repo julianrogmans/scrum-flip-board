@@ -17,7 +17,7 @@
 					</div>
 					<% unless item.description.empty? %>
 						<div class="panel-body">
-							<p><%= item.description %></p>
+							<p><%= markdown(item.description) %></p>
 						</div>
 					<% end %>
 
@@ -27,12 +27,14 @@
 						<span class="pull-right">
 							<% unless item.position == 'to_do' %>
 								<%= link_to move_b_url(team_id: @team.id, id: item.id) do %>
-								    <i class="glyphicon glyphicon-arrow-left"></i>
+								    <i class="hidden-xs glyphicon glyphicon-arrow-left"></i>
+								    <i class="visible-xs glyphicon glyphicon-arrow-up"></i>
 								<% end %>
 							<% end %>
 							<% unless item.position == 'done' %>
 								<%= link_to move_f_url(team_id: @team.id, id: item.id) do %>
-								    <i class="glyphicon glyphicon-arrow-right"></i>
+								    <i class="hidden-xs glyphicon glyphicon-arrow-right"></i>
+								    <i class="visible-xs glyphicon glyphicon-arrow-down"></i>
 								<% end %>
 							<% end %>
 						</span>
@@ -54,7 +56,7 @@
 					</div>
 					<% unless item.description.empty? %>
 						<div class="panel-body">
-							<p><%= item.description %></p>
+							<p><%= markdown(item.description) %></p>
 						</div>
 					<% end %>
 
@@ -64,12 +66,14 @@
 						<span class="pull-right">
 							<% unless item.position == 'to_do' %>
 								<%= link_to move_b_url(team_id: @team.id, id: item.id) do %>
-								    <i class="glyphicon glyphicon-arrow-left"></i>
+								    <i class="hidden-xs glyphicon glyphicon-arrow-left"></i>
+								    <i class="visible-xs glyphicon glyphicon-arrow-up"></i>
 								<% end %>
 							<% end %>
 							<% unless item.position == 'done' %>
 								<%= link_to move_f_url(team_id: @team.id, id: item.id) do %>
-								    <i class="glyphicon glyphicon-arrow-right"></i>
+								    <i class="hidden-xs glyphicon glyphicon-arrow-right"></i>
+								    <i class="visible-xs glyphicon glyphicon-arrow-down"></i>
 								<% end %>
 							<% end %>
 						</span>
@@ -91,7 +95,7 @@
 					</div>
 					<% unless item.description.empty? %>
 						<div class="panel-body">
-							<p><%= item.description %></p>
+							<p><%= markdown(item.description) %></p>
 						</div>
 					<% end %>
 
@@ -101,12 +105,14 @@
 						<span class="pull-right">
 							<% unless item.position == 'to_do' %>
 								<%= link_to move_b_url(team_id: @team.id, id: item.id) do %>
-								    <i class="glyphicon glyphicon-arrow-left"></i>
+								    <i class="hidden-xs glyphicon glyphicon-arrow-left"></i>
+								    <i class="visible-xs glyphicon glyphicon-arrow-up"></i>
 								<% end %>
 							<% end %>
 							<% unless item.position == 'done' %>
 								<%= link_to move_f_url(team_id: @team.id, id: item.id) do %>
-								    <i class="glyphicon glyphicon-arrow-right"></i>
+								    <i class="hidden-xs glyphicon glyphicon-arrow-right"></i>
+								    <i class="visible-xs glyphicon glyphicon-arrow-down"></i>
 								<% end %>
 							<% end %>
 						</span>

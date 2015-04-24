@@ -20,7 +20,7 @@
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
 			<%= f.label :description, :class => "form-label fancytext" %>
-			<%= f.text_area :description, :class => "form-control" %>
+			<%= f.text_area :description, rows: 15, :class => "form-control" %>
 			<%= f.hidden_field :team_id, :value => @team.id %>
 		</div>
 	</div>
