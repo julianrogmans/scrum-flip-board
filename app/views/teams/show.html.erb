@@ -8,7 +8,7 @@
 				To Do
 			</h1>
 			<hr />
-			<% @team.items.to_do.each do |item| %>
+			<% @items.to_do.each do |item| %>
 				<div class="panel panel-success">
 					<div class="panel-heading">
 						<h3 class="panel-title">
@@ -47,7 +47,7 @@
 				Busy
 			</h1>
 			<hr />
-			<% @team.items.busy.each do |item| %>
+			<% @items.busy.each do |item| %>
 				<div class="panel panel-success">
 					<div class="panel-heading">
 						<h3 class="panel-title">
@@ -86,7 +86,7 @@
 				Done
 			</h1>
 			<hr />
-			<% @team.items.done.each do |item| %>
+			<% @items.done.each do |item| %>
 				<div class="panel panel-success">
 					<div class="panel-heading">
 						<h3 class="panel-title">
